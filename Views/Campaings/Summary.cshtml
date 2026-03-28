@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Resumen de Campañas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<ul>
+    <li>Total de campañas: @ViewBag.Total</li>
+    <li>Campañas vigentes: @ViewBag.Vigentes</li>
+    <li>Campañas próximas: @ViewBag.Proximas</li>
+    <li>Promedio de descuento: @ViewBag.PromedioDescuento %</li>
+</ul>
+
+<h3>Cantidad por canal:</h3>
+<ul>
+    @foreach (var item in (Dictionary<string,int>)ViewBag.PorCanal)
+    {
+        <li>@item.Key: @item.Value</li>
+    }
+</ul>

@@ -1,0 +1,20 @@
+@model Practica01.Models.Campaign
+
+@{
+    ViewData["Title"] = "Detalle de Campaña";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Categoría:</strong> @Model.Categoria</p>
+    <p><strong>Estado:</strong> @Model.Estado</p>
+    <p><strong>Canal:</strong> @Model.Canal</p>
+    <p><strong>Descuento:</strong> @Model.Descuento %</p>
+    <p><strong>Fecha Inicio:</strong> @Model.FechaInicio.ToShortDateString()</p>
+    <p><strong>Fecha Fin:</strong> @Model.FechaFin.ToShortDateString()</p>
+</div>
+
+<a class="btn btn-secondary" asp-action="Index">Volver al listado</a>
